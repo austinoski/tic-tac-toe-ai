@@ -3,11 +3,13 @@ from urllib import response
 import numpy as np
 from flask import Flask, request
 from flask_restful import Resource, Api
+from flask_cors import CORS
 
 
 # Initialize app
 app = Flask(__name__)
 api = Api(app)
+CORS(app)
 
 # load saved model
 with open("tic-tac-toe_model.pkl", "rb") as f:
